@@ -32,7 +32,7 @@ public class Missao {
 
     @ManyToOne
     @JoinColumn(name = "monstro_id", referencedColumnName = "id_monstro")
-    private int mosntro_id;
+    private Monstro monstro_id;
 
     @Column(name = "quantidade_monstro")
     private  int quantidade_monstro = 1;

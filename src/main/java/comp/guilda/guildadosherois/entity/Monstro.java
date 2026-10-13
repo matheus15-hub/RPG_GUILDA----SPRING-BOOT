@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.mapping.Join;
+
 
 import java.util.List;
 
@@ -30,6 +30,6 @@ public class Monstro {
     private int drop_xp;
 
     @OneToMany(mappedBy = "monstro_id")
-    private List<Monstro> missoes;
+    private List<Missao> missoes;
 
 }

@@ -32,11 +32,11 @@ public class Aventureiro {
     @Column(name = "ouro")
     private int ouro =1;
 
-    @ManyToMany
-    @JoinColumn(name= "classe_id", referencedColumnName = "id_clase")
-    private int class_id;
+    @ManyToOne
+    @JoinColumn(name= "classe_id", referencedColumnName = "id_classe")
+    private Classe classe_id;
 
-    @ManyToMany
-    @JoinColumn(name = "guilda_id", referencedColumnName = "id_guida")
-    private int guilda_id;
+    @ManyToOne
+    @JoinColumn(name = "guilda_id", referencedColumnName = "id_guilda")
+    private Guilda guilda_id;
 }

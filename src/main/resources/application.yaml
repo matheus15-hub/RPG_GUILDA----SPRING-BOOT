@@ -1,16 +1,12 @@
-spring:
-  application:
-    name: guildadosherois
-  datasource:
-    url: jdbc:mysql://localhost:3306/guilda
-    username: root
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
-    jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: true
-      properties:
-        hibernate:
-          format_sql: true
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/guida
+    username: postgres
+    password: "@math78963"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

@@ -27,6 +27,6 @@ public class Guilda {
     @Column(name="lema")
     private String lema;
 
-    @OneToMany(mappedBy = "id_guilda")
+    @OneToMany(mappedBy = "guilda_id")
     private List<Aventureiro> aventureiros;
 }
