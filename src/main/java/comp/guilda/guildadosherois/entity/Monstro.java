@@ -21,7 +21,7 @@ public class Monstro {
     @Id
     @Column(name="id_monstro")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_monstro;
+    private Long id_monstro;
 
     @Column(name = "nome")
     private  String nome;

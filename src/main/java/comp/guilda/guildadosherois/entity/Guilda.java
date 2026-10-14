@@ -19,7 +19,7 @@ public class Guilda {
     @Id
     @Column(name = "id_guilda")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_guilda;
+    private Long id_guilda;
 
     @Column(name = "nome")
     private String nome;

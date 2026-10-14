@@ -5,13 +5,13 @@ import lombok.Getter;
 
 @Getter
 public enum DificuldadeMissao {
-    Faisca("Faísca"),
-    Broto_Arcano("Broto Arcano"),
-    Runiforme("Runiforme"),
-    Presa_de_Ebano("Presa de Ébano"),
-    Sangue_de_Dragao("Sangue de Dragão"),
-    Cataclismo("Cataclismo"),
-    Divindade("Divindade");
+    Faisca("Faísca"),//1
+    Broto_Arcano("Broto Arcano"),//2
+    Runiforme("Runiforme"),//4
+    Presa_de_Ebano("Presa de Ébano"),//5
+    Sangue_de_Dragao("Sangue de Dragão"),///7
+    Cataclismo("Cataclismo"),//9
+    Divindade("Divindade");//12
 
     private final String nomeExebicao;
 

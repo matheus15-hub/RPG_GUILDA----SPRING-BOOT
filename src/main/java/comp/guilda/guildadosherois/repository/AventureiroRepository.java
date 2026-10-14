@@ -1,4 +1,4 @@
-package comp.guilda.guildadosherois;
+package comp.guilda.guildadosherois.repository;
 
 import comp.guilda.guildadosherois.entity.Aventureiro;
 import org.springframework.data.jpa.repository.JpaRepository;

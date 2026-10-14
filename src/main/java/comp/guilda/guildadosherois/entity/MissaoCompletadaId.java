@@ -15,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class MissaoCompletadaId implements Serializable {
 
-    private int id_aventureiro;
+    private Long id_aventureiro;
 
-    private int id_missao;
+    private Long id_missao;
 }
