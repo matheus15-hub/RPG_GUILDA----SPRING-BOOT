@@ -16,6 +16,7 @@ public record ClasseRequest(
         )
         String nome,
         @NotBlank(message = "Informe a raridade da classe")
-        Raridade raridade
+        Raridade raridade,
+        String descricao
 ) {
 }

@@ -1,5 +1,6 @@
 package comp.guilda.guildadosherois.service;
 
+import comp.guilda.guildadosherois.Request.AventureiroUpadateResquet;
 import comp.guilda.guildadosherois.repository.AventureiroRepository;
 import comp.guilda.guildadosherois.Request.AventureiroRequest;
 import comp.guilda.guildadosherois.entity.Aventureiro;
@@ -7,6 +8,9 @@ import comp.guilda.guildadosherois.repository.ClasseRepository;
 import comp.guilda.guildadosherois.repository.GuildaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,5 +42,43 @@ public class AventureiroService {
 
         var aventureiroId = aventureiroRepository.save(entity);
         return aventureiroId.getId_aventureiro();
+    }
+
+    public Optional<Aventureiro> getIdAventureiro(Long id){
+        return aventureiroRepository.findById(id);
+    }
+
+    public List<Aventureiro> getAllAventureiro(){
+        return aventureiroRepository.findAll();
+    }
+
+    public void updateByIdAventureiro(Long id, AventureiroUpadateResquet resquet){
+
+        var classe = classeRepository.findById(Long.valueOf(resquet.classe_id()))
+                .orElseThrow(()-> new RuntimeException("Classe não encontrada"));
+        var guilda = guildaRepository.findById(Long.valueOf(resquet.guilda_id()))
+                .orElseThrow(()-> new RuntimeException("Guilda não encontrada"));
+
+        var aventureiroEXist = aventureiroRepository.findById(id);
+
+
+        if(aventureiroEXist.isPresent()){
+            var aventureiro = aventureiroEXist.get();
+
+            aventureiro.setNome(resquet.nome());
+            aventureiro.setClasse_id(classe);
+            aventureiro.setGuilda_id(guilda);
+
+            aventureiroRepository.save(aventureiro);
+        }
+
+    }
+
+    public void deleteByIdAventureiro(Long id){
+        var aventureiroExist = aventureiroRepository.existsById(id);
+
+        if(aventureiroExist){
+            aventureiroRepository.deleteById(id);
+        }
     }
 }
